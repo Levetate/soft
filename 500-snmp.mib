@@ -1,0 +1,735 @@
+DATAKOM-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    enterprises FROM RFC1155-SMI
+    OBJECT-TYPE FROM RFC-1212;
+
+DATAKOM		OBJECT IDENTIFIER ::= {enterprises 34076}
+D500		OBJECT IDENTIFIER ::= {DATAKOM 500}
+MONITOR		OBJECT IDENTIFIER ::= {D500 1}
+MAINS		OBJECT IDENTIFIER ::= {MONITOR 11}
+GENSET		OBJECT IDENTIFIER ::= {MONITOR 12}
+ENGINE		OBJECT IDENTIFIER ::= {MONITOR 13}
+ALARMS		OBJECT IDENTIFIER ::= {MONITOR 14}
+
+Mains_L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 1}
+
+Mains_L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 2}
+
+Mains_L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 3}
+
+Mains_L1_L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1-L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 4}
+
+Mains_L2_L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2-L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 5}
+
+Mains_L3_L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3-L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 6}
+
+Mains_I1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains I1 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 7}
+
+Mains_I2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains I2 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 8}
+
+Mains_I3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains I3 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 9}
+
+Mains_Neutral OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Neutral (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 10}
+
+Mains_L1_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 11}
+
+Mains_L2_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 12}
+
+Mains_L3_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 13}
+
+Mains_Total_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 14}
+
+Mains_L1_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 15}
+
+Mains_L2_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 16}
+
+Mains_L3_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 17}
+
+Mains_Total_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 18}
+
+Mains_L1_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 19}
+
+Mains_L2_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 20}
+
+Mains_L3_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 21}
+
+Mains_Total_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 22}
+
+Mains_L1_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 23}
+
+Mains_L2_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 24}
+
+Mains_L3_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 25}
+
+Mains_Total_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 26}
+
+Mains_Total_Phase OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total Phase (D)"
+	::= {MAINS 27}
+
+Mains_Total_Frequency OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains Total Frequency (Hz) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {MAINS 28}
+
+Tot_Mains_kWh OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Tot Mains kWh (kW) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 29}
+
+Tot_Mains_kVArh_Ind OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Tot Mains kVArh (Ind) (kVAr) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 30}
+
+Tot_Mains_kVArh_Cap OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Tot Mains kVArh (Cap) (kVAr) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 31}
+
+Tot_Mains_Exported_kWh OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Tot Mains Exported kWh (kW) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {MAINS 32}
+
+Gen_L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 33}
+
+Gen_L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 34}
+
+Gen_L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 35}
+
+Gen_L1_L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1-L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 36}
+
+Gen_L2_L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2-L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 37}
+
+Gen_L3_L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3-L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 38}
+
+Gen_I1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen I1 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 39}
+
+Gen_I2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen I2 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 40}
+
+Gen_I3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen I3 (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 41}
+
+Gen_Neutral OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Neutral (A) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 42}
+
+Gen_L1_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 43}
+
+Gen_L2_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 44}
+
+Gen_L3_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3 ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 45}
+
+Gen_Total_ActivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total ActivePower (kW) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 46}
+
+Gen_L1_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 47}
+
+Gen_L2_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 48}
+
+Gen_L3_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3 ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 49}
+
+Gen_Total_ReactivePower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total ReactivePower (kVAr) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 50}
+
+Gen_L1_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 51}
+
+Gen_L2_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 52}
+
+Gen_L3_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3 ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 53}
+
+Gen_Total_ApparentPower OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total ApparentPower (kVA) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 54}
+
+Gen_L1_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L1 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 55}
+
+Gen_L2_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L2 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 56}
+
+Gen_L3_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen L3 Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 57}
+
+Gen_Total_Power_Factor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total Power Factor (D) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 58}
+
+Gen_Total_Phase OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total Phase (D)"
+	::= {GENSET 59}
+
+Gen_Total_Frequency OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Gen Total Frequency (Hz) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {GENSET 60}
+
+Total_Gen_kWh OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Total Gen kWh (kW) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 61}
+
+Total_Gen_kVArh_Ind OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Total Gen kVArh (Ind) (kVAr) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 62}
+
+Total_Gen_kVArh_Cap OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Total Gen kVArh (Cap) (kVAr) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {GENSET 63}
+
+Genset_Mode OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Genset Mode (1.Stop, 2.Run, 4.Auto, 8.Test)"
+	::= {GENSET 64}
+
+Genset_State OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Genset State (0.Genset at Rest, 1.Engine Start Delay, 2.Engine Preheat, 3.Oil Pressure Exist, 4.Crank Rest, 5.Cranking, 6.Run Idle Speed, 7.Engine Heating, 8.Running Off Load, 9.Synch -> Mains (Synchronizing to Mains), 10.Load Ramping Up, 11.Gen CB Activation, 12.Gen CB Timeout, 13.Genset on Load, 14.Peak Loopping, 15.Power Exporting, 16.Load Sharing, 17.Synch <- Mains (Synchronizing back to Mains), 18.Load Ramping Down, 19.Mains CB Activation, 20.Mains CB Timeout, 21.Stop With Cooldown, 22.Cooldown, 23.Stop Idle Speed, 24.Immediate Stop, 25.Stopping, 26.Wait Mains->Gen Trans, 27.Wait Gen->Mains Trans)"
+	::= {GENSET 65}
+
+Controller_Buttons OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-write
+	STATUS mandatory
+	DESCRIPTION
+		"Controller Buttons (1.Stop, 2.Auto, 4.Manual(Run), 8.Test, 16.GC, 32.MC)"
+	::= {GENSET 66}
+
+User_Outputs_Monitor OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"User Outputs Monitor (1.Remote Control Out 1 On, 2.Remote Control Out 2 On, 4.Remote Control Out 3 On, 8.Remote Control Out 4 On, 16.Remote Control Out 5 On, 32.Remote Control Out 6 On, 64.Remote Control Out 7 On, 128.Remote Control Out 8 On, 256.Remote Control Out 9 On, 512.Remote Control Out 10 On, 1024.Remote Control Out 11 On, 2048.Remote Control Out 12 On, 4096.Remote Control Out 13 On, 8192.Remote Control Out 14 On, 16384.Remote Control Out 15 On, 32768.Remote Control Out 16 On,)"
+	::= {GENSET 67}
+
+User_Outputs_Modify OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-write
+	STATUS mandatory
+	DESCRIPTION
+		"User Outputs Modify (To set Remote Control Out 1, write 0x0001 (1); to reset Remote Control Out 1, write 0x8001 (32769).To set Remote Control Out 16, write 0x0010 (16); to reset Remote Control Out 16, write 0x8010 (32784) )"
+	::= {GENSET 68}
+
+Charge_Voltage OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Charge Voltage (Vdc) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 69}
+
+Battery_Voltage OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Battery Voltage (Vdc) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 70}
+
+Oil_Pressure OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Oil Pressure (Bar) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 71}
+
+Engine_Temperature OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Engine Temperature (C) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 72}
+
+Fuel_Level OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Fuel Level (%) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 73}
+
+Oil_Temperature OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Oil Temperature (C) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 74}
+
+Canopy_Temperature OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Canopy Temperature (C) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 75}
+
+Ambient_Temperature OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Ambient Temperature (C) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::= {ENGINE 76}
+
+Engine_Speed OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Engine Speed (RPM)"
+	::= {ENGINE 77}
+
+Genset_Runs OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Genset Runs ()"
+	::= {ENGINE 78}
+
+Genset_Cranks OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Genset Cranks ()"
+	::= {ENGINE 79}
+
+Engine_Run_Hours OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Engine Run Hours (hour) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 80}
+
+Hours_to_Srv1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Hours to Srv1 (hour) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 81}
+
+Days_to_Srv1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Days to Srv1 (day) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 82}
+
+Hours_to_Srv2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Hours to Srv2 (hour) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 83}
+
+Days_to_Srv2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Days to Srv2 (day) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 84}
+
+Hours_to_Srv3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Hours to Srv3 (hour) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 85}
+
+Days_to_Srv3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Days to Srv3 (day) (This item must be multiplied by 1 and then divided by 100 for its real value)"
+	::= {ENGINE 86}
+
+Fuel_counter OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Fuel counter ()"
+	::= {ENGINE 87}
+
+Shutdown_Alarm_List OBJECT-TYPE
+	SYNTAX OCTET STRING (SIZE (0..63))
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Shutdown Alarm List ()"
+	::= {ALARMS 88}
+
+LoadDump_Alarm_List OBJECT-TYPE
+	SYNTAX OCTET STRING (SIZE (0..63))
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"LoadDump Alarm List ()"
+	::= {ALARMS 89}
+
+Warning_List OBJECT-TYPE
+	SYNTAX OCTET STRING (SIZE (0..127))
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Warning List ()"
+	::= {ALARMS 90}
+
+END
