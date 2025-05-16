@@ -1,0 +1,71 @@
+DATAKOM-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+	TRAP-TYPE
+			FROM RFC-1215
+		DisplayString
+			FROM SNMPv2-TC
+		OBJECT-TYPE
+			FROM RFC-1212
+		enterprises,Counter, IpAddress
+			FROM RFC1155-SMI
+                PositiveInteger,NonNegativeInteger
+                     	FROM UPS-MIB;
+
+datacom		OBJECT IDENTIFIER ::={ enterprises 34076 }
+d500    	OBJECT IDENTIFIER ::={ datacom 500 }
+monitor		OBJECT IDENTIFIER ::={ d500 1 }
+mains   	OBJECT IDENTIFIER ::={ monitor 11 }
+genset		OBJECT IDENTIFIER ::={ monitor 12 }
+engine		OBJECT IDENTIFIER ::={ monitor 13 }
+alarms		OBJECT IDENTIFIER ::={ monitor 14 }
+
+mains-L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 1 }
+
+mains-L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 2 }
+
+mains-L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 3 }
+
+mains-L1-L2 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L1-L2 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 4 }
+
+mains-L2-L3 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L2-L3 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 5 }
+
+mains-L3-L1 OBJECT-TYPE
+	SYNTAX INTEGER
+	ACCESS read-only
+	STATUS mandatory
+	DESCRIPTION
+		"Mains L3-L1 (V) (This item must be multiplied by 1 and then divided by 10 for its real value)"
+	::={ mains 6 }
+
+END
